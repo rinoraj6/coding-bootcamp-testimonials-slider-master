@@ -1,3 +1,4 @@
+// slider
 const slider = [
   {
     name: "Tanya Sinclair",
@@ -24,20 +25,18 @@ let jobSpan = document.querySelector(".job"); // job
 
 const testimonialImg = document.querySelector(".testimonial-img"); // testimonial  image
 
-let currentPos = 0;
-let nextPos = 1;
+let currentPos = 0; // current slide index
+let nextPos = 1; // next slide index
 
+// load function
 updateSlider();
 
-
-console.log(`current slide index : ${currentPos}`);
-console.log(`next slide index : ${nextPos}`);
-
+// console.log(`current slide index : ${currentPos}`);
+// console.log(`next slide index : ${nextPos}`);
 
 // update function
 function updateSlider() {
   if (nextPos == 1) {
-    // console.log("log");
     currentPos = 0;
     mainTestimonial.textContent = slider[currentPos].text;
     textBox.appendChild(mainTestimonial);
@@ -54,7 +53,7 @@ function updateSlider() {
     testimonialImg.src = slider[currentPos].imgURL;
     imgBox.append(testimonialImg);
 
-    nextPos = 0;
+    nextPos = 0;  // next slide index update
   } else if (nextPos == 0) {
     console.log("log");
     currentPos = 1;
@@ -73,8 +72,6 @@ function updateSlider() {
     testimonialImg.src = slider[currentPos].imgURL;
     imgBox.append(testimonialImg);
 
-    nextPos = 1;
+    nextPos = 1; // next slide index update
   }
 }
-
-
